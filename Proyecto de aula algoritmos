@@ -1,0 +1,217 @@
+import java.util.Scanner;
+
+public class MenuComputadoras {
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+    
+        while (true) {
+            System.out.println("=== MENÚ PRINCIPAL ===");
+            System.out.println("1. Dell");
+            System.out.println("2. HP");
+            System.out.println("3. Lenovo");
+            System.out.println("4. Salir");
+            System.out.print("Selecciona una marca: ");
+            int marca = scanner.nextInt();
+
+            if (marca == 4) {
+                System.out.println("¡Hasta luego!");
+                break;
+            }
+
+            
+            System.out.print("¿Es Laptop (1) o Desktop (2)? ");
+            int tipo = scanner.nextInt();
+
+            if (tipo == 1) { // Laptop
+                mostrarModelosLaptop(marca);
+            } else if (tipo == 2) { // Desktop
+                mostrarModelosDesktop(marca);
+            } else {
+                System.out.println("Selección no válida.");
+            }
+        }
+    }
+
+    public static void mostrarModelosLaptop(int marca) {
+        switch (marca) {
+            case 1: // Dell
+                System.out.println("Modelos de Laptop Dell:");
+                System.out.println("1. Dell XPS 13");
+                System.out.println("2. Dell Inspiron 15");
+                break;
+            case 2: // HP
+                System.out.println("Modelos de Laptop HP:");
+                System.out.println("1. HP Spectre x360");
+                System.out.println("2. HP Pavilion 14");
+                break;
+            case 3: // Lenovo
+                System.out.println("Modelos de Laptop Lenovo:");
+                System.out.println("1. Lenovo ThinkPad X1 Carbon");
+                System.out.println("2. Lenovo Yoga 7i");
+                break;
+            default:
+                System.out.println("Marca no reconocida.");
+                return;
+        }
+
+        System.out.print("Selecciona un modelo: ");
+        int modelo = scanner.nextInt();
+        mostrarDetallesLaptop(modelo, marca);
+    }
+
+    public static void mostrarModelosDesktop(int marca) {
+        switch (marca) {
+            case 1: // Dell
+                System.out.println("Modelos de Desktop Dell:");
+                System.out.println("1. Dell OptiPlex 7090");
+                System.out.println("2. Dell XPS Tower");
+                break;
+            case 2: // HP
+                System.out.println("Modelos de Desktop HP:");
+                System.out.println("1. HP Envy Desktop");
+                System.out.println("2. HP Pavilion Desktop");
+                break;
+            case 3: // Lenovo
+                System.out.println("Modelos de Desktop Lenovo:");
+                System.out.println("1. Lenovo ThinkCentre M90t");
+                System.out.println("2. Lenovo Legion Tower 5");
+                break;
+            default:
+                System.out.println("Marca no reconocida.");
+                return;
+        }
+
+        System.out.print("Selecciona un modelo: ");
+        int modelo = scanner.nextInt();
+        mostrarDetallesDesktop(modelo, marca);
+    }
+
+    public static void mostrarDetallesLaptop(int modelo, int marca) {
+        switch (marca) {
+            case 1: // Dell
+                if (modelo == 1) { // Dell XPS 13
+                    System.out.println("Características Dell XPS 13:");
+                    System.out.println("  - Capacidad máxima de RAM: 32GB");
+                    System.out.println("  - Procesador: Intel Core i7-1185G7");
+                    System.out.println("  - Windows soportado: Windows 10/11");
+                    System.out.println("  - TPM: 2.0");
+                    System.out.println("  - Actualización TPM: No se puede actualizar de 1.2 a 2.0");
+                    System.out.println("  - Mantenimiento: Limpieza interna cada 6 meses.");
+                } else if (modelo == 2) { // Dell Inspiron 15
+                    System.out.println("Características Dell Inspiron 15:");
+                    System.out.println("  - Capacidad máxima de RAM: 16GB");
+                    System.out.println("  - Procesador: Intel Core i5-1135G7");
+                    System.out.println("  - Windows soportado: Windows 10/11");
+                    System.out.println("  - TPM: 2.0");
+                    System.out.println("  - Actualización TPM: Se puede actualizar de 1.2 a 2.0.");
+                    System.out.println("  - Mantenimiento: Reemplazar la batería cada 2 años.");
+                }
+                break;
+            case 2: // HP
+                if (modelo == 1) { // HP Spectre x360
+                    System.out.println("Características HP Spectre x360:");
+                    System.out.println("  - Capacidad máxima de RAM: 16GB");
+                    System.out.println("  - Procesador: Intel Core i7-1165G7");
+                    System.out.println("  - Windows soportado: Windows 10/11");
+                    System.out.println("  - TPM: 2.0");
+                    System.out.println("  - Actualización TPM: No es posible.");
+                    System.out.println("  - Mantenimiento: Asegúrate de mantener las actualizaciones al día.");
+                } else if (modelo == 2) { // HP Pavilion 14
+                    System.out.println("Características HP Pavilion 14:");
+                    System.out.println("  - Capacidad máxima de RAM: 12GB");
+                    System.out.println("  - Procesador: Intel Core i5-1135G7");
+                    System.out.println("  - Windows soportado: Windows 10/11");
+                    System.out.println("  - TPM: 2.0");
+                    System.out.println("  - Actualización TPM: Se puede actualizar de 1.2 a 2.0.");
+                    System.out.println("  - Mantenimiento: Limpieza de teclado y pantalla.");
+                }
+                break;
+            case 3: // Lenovo
+                if (modelo == 1) { // Lenovo ThinkPad X1 Carbon
+                    System.out.println("Características Lenovo ThinkPad X1 Carbon:");
+                    System.out.println("  - Capacidad máxima de RAM: 32GB");
+                    System.out.println("  - Procesador: Intel Core i7-1185G7");
+                    System.out.println("  - Windows soportado: Windows 10/11");
+                    System.out.println("  - TPM: 2.0");
+                    System.out.println("  - Actualización TPM: No se puede actualizar de 1.2 a 2.0.");
+                    System.out.println("  - Mantenimiento: Revisar el sistema de ventilación cada 6 meses.");
+                } else if (modelo == 2) { // Lenovo Yoga 7i
+                    System.out.println("Características Lenovo Yoga 7i:");
+                    System.out.println("  - Capacidad máxima de RAM: 16GB");
+                    System.out.println("  - Procesador: Intel Core i7-1165G7");
+                    System.out.println("  - Windows soportado: Windows 10/11");
+                    System.out.println("  - TPM: 2.0");
+                    System.out.println("  - Actualización TPM: Se puede actualizar de 1.2 a 2.0.");
+                    System.out.println("  - Mantenimiento: Actualizar controladores cada 6 meses.");
+                }
+                break;
+            default:
+                System.out.println("Modelo no reconocido.");
+        }
+    }
+
+    public static void mostrarDetallesDesktop(int modelo, int marca) {
+        switch (marca) {
+            case 1: // Dell
+                if (modelo == 1) { // Dell OptiPlex 7090
+                    System.out.println("Características Dell OptiPlex 7090:");
+                    System.out.println("  - Capacidad máxima de RAM: 64GB");
+                    System.out.println("  - Procesador: Intel Core i9-11900");
+                    System.out.println("  - Windows soportado: Windows 10/11");
+                    System.out.println("  - TPM: 2.0");
+                    System.out.println("  - Actualización TPM: No es posible.");
+                    System.out.println("  - Mantenimiento: Revisar el sistema de enfriamiento.");
+                } else if (modelo == 2) { // Dell XPS Tower
+                    System.out.println("Características Dell XPS Tower:");
+                    System.out.println("  - Capacidad máxima de RAM: 64GB");
+                    System.out.println("  - Procesador: Intel Core i7-11700K");
+                    System.out.println("  - Windows soportado: Windows 10/11");
+                    System.out.println("  - TPM: 2.0");
+                    System.out.println("  - Actualización TPM: Se puede actualizar de 1.2 a 2.0.");
+                    System.out.println("  - Mantenimiento: Limpiar ventiladores cada 6 meses.");
+                }
+                break;
+            case 2: // HP
+                if (modelo == 1) { // HP Envy Desktop
+                    System.out.println("Características HP Envy Desktop:");
+                    System.out.println("  - Capacidad máxima de RAM: 32GB");
+                    System.out.println("  - Procesador: Intel Core i7-10700");
+                    System.out.println("  - Windows soportado: Windows 10/11");
+                    System.out.println("  - TPM: 2.0");
+                    System.out.println("  - Actualización TPM: No es posible.");
+                    System.out.println("  - Mantenimiento: Revisar el sistema de enfriamiento.");
+                } else if (modelo == 2) { // HP Pavilion Desktop
+                    System.out.println("Características HP Pavilion Desktop:");
+                    System.out.println("  - Capacidad máxima de RAM: 16GB");
+                    System.out.println("  - Procesador: Intel Core i5-10400");
+                    System.out.println("  - Windows soportado: Windows 10/11");
+                    System.out.println("  - TPM: 2.0");
+                    System.out.println("  - Actualización TPM: Se puede actualizar de 1.2 a 2.0.");
+                    System.out.println("  - Mantenimiento: Limpieza del sistema cada 6 meses.");
+                }
+                break;
+            case 3: // Lenovo
+                if (modelo == 1) { // Lenovo ThinkCentre M90t
+                    System.out.println("Características Lenovo ThinkCentre M90t:");
+                    System.out.println("  - Capacidad máxima de RAM: 64GB");
+                    System.out.println("  - Procesador: Intel Core i9-10900");
+                    System.out.println("  - Windows soportado: Windows 10/11");
+                    System.out.println("  - TPM: 2.0");
+                    System.out.println("  - Actualización TPM: No es posible.");
+                    System.out.println("  - Mantenimiento: Limpiar y verificar la fuente de poder.");
+                } else if (modelo == 2) { // Lenovo Legion Tower 5
+                    System.out.println("Características Lenovo Legion Tower 5:");
+                    System.out.println("  - Capacidad máxima de RAM: 64GB");
+                    System.out.println("  - Procesador: AMD Ryzen 7 5800X");
+                    System.out.println("  - Windows soportado: Windows 10/11");
+                    System.out.println("  - TPM: 2.0");
+                    System.out.println("  - Actualización TPM: Se puede actualizar de 1.2 a 2.0.");
+                    System.out.println("  - Mantenimiento: Reemplazar la tarjeta gráfica cada 3 años.");
+                }else {
+                    System.out.println("Modelo no reconocido.");
+                }break;
+        }
+        scanner.close();
+    }
+}
